@@ -1,123 +1,138 @@
-# Control de Inventario de TecnoPunto
+ # Control de Inventario - TecnoPunto
 
-**Actividad:** Clases, objetos y propiedades – Programación Básica  
-**Profesor:** Gamalier Reyes del Carmen
+## Información general
 
-## Datos de los autores
+**Proyecto:** Control de Inventario de TecnoPunto  
+**Asignatura:** Programación Básica  
+**Actividad:** Clases, objetos y propiedades  
+**Docente:** Gamalier Reyes del Carmen  
 
-| Nombre | Matrícula |
-|---|---|
-| Albert Alexander Carty | 2025-2788 |
-| Orianna Dayanara Calcaño R. | 2025-2695 |
-| Maria Pilar Vessania Silvence Yedi | 2025-3481 |
+## Integrantes
 
-## Descripción del programa
+- **Albert Alexander Carty** — 2025-2788
+- **Orianna Dayanara Calcaño R.** — 2025-2695
+- **Maria Pilar Vessania Silvence Yedi** — 2025-3481
 
-Aplicación de consola desarrollada en **C#** para la tienda *TecnoPunto*, que llevaba su inventario en papel y cometía errores como precios negativos, cantidades inválidas y productos sin nombre.
+## Descripción del proyecto
 
-El programa modela cada producto mediante la clase `Producto`, que encapsula sus datos utilizando **campos privados y propiedades con validación** (bloque `set`). Registra tres productos ingresados por teclado y muestra su información, incluido el **valor total en existencia**, que cada producto calcula por sí mismo.
+El proyecto consiste en desarrollar una aplicación de consola en C# para gestionar el inventario de una tienda de tecnología llamada TecnoPunto.
 
-Si el usuario ingresa un dato inválido, el programa muestra un mensaje claro y vuelve a solicitar los datos del mismo producto, evitando que la aplicación se cierre inesperadamente.
+El programa permite registrar productos, validar sus datos y calcular el valor total de cada producto según su precio y cantidad disponible.
+
+## Objetivos
+
+- Aplicar los conceptos de clases y objetos en C#.
+- Utilizar propiedades para acceder a los atributos de una clase.
+- Implementar validaciones para evitar datos incorrectos.
+- Registrar productos y calcular el valor total del inventario.
+
+## Funcionamiento del programa
+
+La aplicación permite:
+
+1. Registrar tres productos.
+2. Introducir el código, nombre, precio y cantidad de cada producto.
+3. Validar los datos ingresados.
+4. Mostrar mensajes de error cuando se introducen datos no permitidos.
+5. Calcular el valor total de cada producto mediante su precio y cantidad.
 
 ## Estructura del proyecto
 
-| Archivo | Contenido |
-|---|---|
-| `Program.cs` | Contiene las clases `Producto` y `Program`, los campos privados, las propiedades con validación, el constructor, el método `MostrarInfo()`, el método `RegistrarProducto()` y el método `Main`. |
-| `Inventario.csproj` | Archivo de configuración del proyecto de C#. |
-| `Inventario.slnx` | Archivo de solución de Visual Studio. |
-| `README.md` | Documentación del proyecto y evidencias de ejecución. |
-| `Capturas/` | Carpeta que contiene las imágenes de las pruebas realizadas. |
+```text
+ControlInventario/
+│
+├── Capturas/
+│   ├── Productos.jfif
+│   ├── Segunda.jfif
+│   ├── tercera.jfif
+│   ├── cuarta.jfif
+│   ├── Quinta.jfif
+│   └── Sexta.jfif
+│
+├── Inventario.csproj
+├── Inventario.slnx
+├── Program.cs
+└── README.md
+```
 
-## Datos de entrada
+## Clases y conceptos utilizados
 
-Para cada uno de los tres productos, el usuario ingresa por teclado:
+### Clase Producto
 
-| Dato | Tipo | Regla de validación |
-|---|---|---|
-| Código | `string` | Sin restricciones. |
-| Nombre | `string` | No puede estar vacío ni contener solamente espacios. |
-| Precio | `decimal` | Debe ser numérico y mayor que 0. |
-| Cantidad | `int` | Debe ser un número entero y no puede ser negativa. El 0 es válido. |
+La clase `Producto` representa los artículos que forman parte del inventario. Contiene los atributos necesarios para almacenar la información de cada producto.
 
-## Datos que procesa
+Se utilizan propiedades para controlar el acceso a los datos y aplicar las validaciones correspondientes.
 
-1. **Lectura y conversión:** el precio y la cantidad se convierten utilizando `decimal.TryParse` e `int.TryParse`. Si el texto ingresado no corresponde a un número válido, se muestra un mensaje de error.
-2. **Validación en las propiedades (`set`):**
-   - `Nombre`: lanza `ArgumentException` si está vacío o contiene solamente espacios.
-   - `Precio`: lanza `ArgumentException` si es menor o igual a 0.
-   - `Cantidad`: lanza `ArgumentException` si es negativa.
-3. **Creación del objeto:** el constructor recibe los datos y los asigna mediante las propiedades, garantizando que se apliquen las validaciones.
-4. **Cálculo:** la propiedad de solo lectura `ValorTotal` devuelve el resultado de multiplicar el precio por la cantidad.
-5. **Manejo de errores:** un bloque `try-catch` dentro de un ciclo `while (true)` captura las excepciones, muestra el mensaje correspondiente y permite repetir el registro del producto hasta que los datos sean válidos.
+### Propiedades y validaciones
 
-## Datos de salida
+- **Código:** identifica cada producto.
+- **Nombre:** no puede estar vacío.
+- **Precio:** debe ser mayor que cero.
+- **Cantidad:** no puede ser negativa.
+- **ValorTotal:** calcula el resultado de multiplicar el precio por la cantidad disponible.
 
-- Mensaje de confirmación al registrar cada producto: `Producto registrado correctamente.`
-- Mensajes de error ante datos inválidos:
-  - `El nombre no puede estar vacío.`
-  - `El precio debe ser mayor que cero.`
-  - `La cantidad no puede ser negativa.`
-  - `Debe ingresar un precio valido.`
-  - `Debe ingresar una cantidad valida.`
-- **Inventario final:** muestra los datos de cada producto, incluyendo código, nombre, precio, cantidad y valor total, con dos decimales.
+### Conceptos aplicados
+
+- Clases y objetos.
+- Encapsulamiento.
+- Campos privados.
+- Propiedades.
+- Validaciones.
+- Métodos y constructores.
 
 ## Capturas de la ejecución
 
-### 1. Datos válidos
+### 1. Cantidad cero
 
-Se registra un producto con código `P001`, nombre `Laptop Hp`, precio `25000` y cantidad `3`. El programa acepta los datos y muestra el mensaje `Producto registrado correctamente.`
+Se ingresa una cantidad igual a `0`. El programa acepta el dato, ya que solamente se rechazan las cantidades negativas.
 
-![Captura con datos válidos](Capturas/Productos.jfif)
+![Captura con cantidad cero](Capturas/Productos.jfif)
 
-### 2. Inventario final
+### 2. Cantidad negativa
 
-Al terminar el registro de los tres productos, el programa muestra la información de cada uno: código, nombre, precio, cantidad y valor total (precio × cantidad).
+Se ingresa una cantidad negativa. El programa muestra el mensaje de error correspondiente y vuelve a solicitar los datos.
 
-![Captura del inventario final](Capturas/Segunda.jfif)
+![Captura con cantidad negativa](Capturas/Segunda.jfif)
 
-### 3. Precio negativo
+### 3. Nombre vacío
 
-Se ingresa el precio `-6000`. El programa muestra el mensaje `ERROR: El precio debe ser mayor que cero.` y vuelve a solicitar los datos del mismo producto.
+Se deja el nombre del producto en blanco. El programa muestra el mensaje `ERROR: El nombre no puede estar vacío.` y vuelve a solicitar los datos.
 
-![Captura con precio negativo](Capturas/tercera.jfif)
+![Captura con nombre vacío](Capturas/tercera.jfif)
 
-### 4. Nombre vacío
+### 4. Precio negativo
 
-Se deja el nombre en blanco. El programa muestra el mensaje `ERROR: El nombre no puede estar vacío.` y vuelve a solicitar los datos.
+Se ingresa un precio negativo. El programa muestra el mensaje `ERROR: El precio debe ser mayor que cero.` y vuelve a solicitar los datos.
 
-![Captura con nombre vacío](Capturas/cuarta.jfif)
+![Captura con precio negativo](Capturas/cuarta.jfif)
 
-### 5. Cantidad cero
+### 5. Registro de productos
 
-Se ingresa la cantidad `0`. El programa acepta el dato, porque solamente se rechazan las cantidades negativas, y registra el producto con un valor total de 0.
+Se muestran los productos que fueron registrados correctamente durante la ejecución del programa.
 
-![Captura con cantidad cero](Capturas/Quinta.jfif)
+![Captura de productos registrados](Capturas/Quinta.jfif)
 
-### 6. Cantidad negativa
+### 6. Registro de otro producto
 
-Se ingresa la cantidad `-8`. El programa muestra el mensaje `ERROR: La cantidad no puede ser negativa.` y vuelve a solicitar los datos.
+Se presenta otra evidencia del registro correcto de un producto en el inventario.
 
-![Captura con cantidad negativa](Capturas/Sexta.jfif)
+![Captura de otro producto registrado](Capturas/Sexta.jfif)
 
-## Cómo ejecutar el proyecto
+## ¿Cómo ejecutar el proyecto?
 
-Para ejecutar el programa se necesita Visual Studio con soporte para C# y el SDK de .NET compatible con la versión configurada en `Inventario.csproj`.
+1. Abrir el archivo `Inventario.slnx` en Visual Studio.
+2. Esperar a que el proyecto cargue correctamente.
+3. Ejecutar la aplicación presionando `F5` o el botón de inicio.
+4. Seguir las instrucciones que aparecen en la consola para registrar los productos.
 
-También se puede ejecutar desde una terminal, dentro de la carpeta del proyecto, utilizando:
+También se puede ejecutar desde una terminal ubicada en la carpeta del proyecto utilizando:
 
 ```bash
 dotnet run
 ```
 
-En Visual Studio, se puede abrir la solución y presionar **F5** para iniciar la aplicación.
+## Conclusión
 
-## Conceptos aplicados
+Este proyecto permitió poner en práctica los conocimientos adquiridos sobre programación orientada a objetos en C#, especialmente el uso de clases, objetos, propiedades y encapsulamiento.
 
-- Clases y objetos: creación de tres objetos a partir de la clase `Producto`.
-- Encapsulamiento: utilización de campos privados y acceso mediante propiedades.
-- Propiedad de solo lectura: `ValorTotal`.
-- Constructor: inicialización de los objetos.
-- Validación de datos mediante propiedades.
-- Manejo de excepciones: `try-catch` y `ArgumentException`.
-- Entrada y salida de datos por consola.
+Además, permitió comprender la importancia de implementar validaciones para garantizar que los datos ingresados sean correctos y mantener un control adecuado de la información del inventario.
