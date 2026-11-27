@@ -114,7 +114,19 @@ Los eventos principales son:
 8. Presionar **Mostrar resumen** para ver los resultados finales.
 
    # *Imageenes de programa en ejecucion**
-   ![ejecutado](IMG/ejecutado.jfif)
+   ![ ejecutado ](IMG/Ejecutado.jfif)
+
+   ![ ejecutado ](IMG/Agregados.jfif)
+   
+   ![ ejecutado ](IMG/Aprobado1.jfif)
+   
+   ![ ejecutado ](IMG/Aprobado2.jfif)
+   
+   ![ ejecutado ](IMG/Aprobado3.jfif)
+   
+   ![ ejecutado ](IMG/Reprobado.jfif)
+   
+   ![ ejecutado ](IMG/Resumen.jfif)
 
 ## Tecnologías utilizadas
 
