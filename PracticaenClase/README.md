@@ -113,20 +113,10 @@ Los eventos principales son:
 7. Repetir el proceso con las demás asignaturas.
 8. Presionar **Mostrar resumen** para ver los resultados finales.
 
-   # *Imageenes de programa en ejecucion**
-   ![ ejecutado ](IMG/Ejecutado.jfif)
+   # *Imageen de programa en ejecucion 3 aprobadas y el resumen**
 
-   ![ ejecutado ](IMG/Agregados.jfif)
    
-   ![ ejecutado ](IMG/Aprobado1.jfif)
-   
-   ![ ejecutado ](IMG/Aprobado2.jfif)
-   
-   ![ ejecutado ](IMG/Aprobado3.jfif)
-   
-   ![ ejecutado ](IMG/Reprobado.jfif)
-   
-   ![ ejecutado ](IMG/Resumen.jfif)
+   ![ ejecutado ](Imagen/Resumen.jfif)
 
 ## Tecnologías utilizadas
 
