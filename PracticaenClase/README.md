@@ -1,6 +1,11 @@
 # Boletín de Calificaciones
 
-Este proyecto es una aplicación de Windows Forms hecha en C# para la actividad individual de **Programación Básica**. La idea es registrar las calificaciones de un estudiante por asignatura, calcular sus promedios y mostrar si aprobó, está en recuperación o reprobó.
+# **Datos**
+- **Nombre:** Albert Alexanader Carty
+- **Matricula:** 2025-2788
+- **Materia:** Programacion Basica
+
+Este proyecto es una aplicación de Windows Forms hecha en C# para la actividad de **Programación Básica**. La idea es registrar las calificaciones de un estudiante por asignatura, calcular sus promedios y mostrar si aprobó, está en recuperación o reprobó.
 
 Lo hice utilizando los controles básicos de Windows Forms y los temas trabajados en clase, como variables, constantes, condicionales, validaciones y eventos de botones.
 
@@ -107,6 +112,9 @@ Los eventos principales son:
 6. Presionar **Registrar asignatura** para agregarla al boletín.
 7. Repetir el proceso con las demás asignaturas.
 8. Presionar **Mostrar resumen** para ver los resultados finales.
+
+   # *Imageenes de programa en ejecucion**
+   ![ejecutado](IMG/ejecutado.jfif)
 
 ## Tecnologías utilizadas
 
